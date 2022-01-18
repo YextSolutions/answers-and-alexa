@@ -76,14 +76,16 @@ const retrieveDeviceCountryAndPostalCode = async (handlerInput) => {
     return address;
 
   } catch (error) {
-    if (error.name !== 'ServiceError') {
-      const response = responseBuilder
-        .speak('Uh Oh. Looks like something went wrong.')
-        .getResponse();
+    // TODO: handle better
+    console.log(error.name)
+    // if (error.name !== 'ServiceError') {
+    //   const response = responseBuilder
+    //     .speak('Uh Oh. Looks like something went wrong.')
+    //     .getResponse();
 
-      return response;
-    }
-    throw error;
+    //   return response;
+    // }
+    // throw error;
   }
 }
 
