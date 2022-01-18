@@ -43,10 +43,10 @@ const FindBranchLocationHandler = {
                     console.log(geoObject);  // Print the geo-coordinates object if accuracy is within 100 meters
                     
                     // const branchLocationMessage = await retrieveAnswer('', 'locations', { lat: geoObject.coordinate.latitudeInDegrees, long: geoObject.coordinate.longitudeInDegrees });
-                    return handlerInput.responseBuilder
-                        .speak(branchLocationMessage)
-                        // TODO: add card response
-                        .getResponse();
+                    // return handlerInput.responseBuilder
+                    //     .speak(branchLocationMessage)
+                    //     // TODO: add card response
+                    //     .getResponse();
                 }
             }
         } else {
