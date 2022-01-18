@@ -16,16 +16,14 @@
           "samples": []
         },
         {
-          "name": "HelloWorldIntent",
+          "name": "FindBranchIntent",
           "slots": [],
           "samples": [
-            "hello",
-            "how are you",
-            "say hi world",
-            "say hi",
-            "hi",
-            "say hello world",
-            "say hello"
+            "where is the closest branch to me",
+            "im looking for a branch",
+            "where is the closest location to me",
+            "find me a branch",
+            "where is the closest branch"
           ]
         },
         {

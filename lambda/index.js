@@ -19,66 +19,54 @@ const LaunchRequestHandler = {
     },
   };
 
-// {
-//     "name": "FindBranchIntent",
-//     "slots": [],
-//     "samples": [
-//       "where is the closest branch to me",
-//       "im looking for a branch",
-//       "where is the closest location to me",
-//       "find me a branch",
-//       "where is the closest branch"
-//     ]
-//   },
+const FindBranchLocationHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'FindBranchIntent';
+    },
+    handle(handlerInput) {
+        var isGeoSupported = context.System.device.supportedInterfaces.Geolocation;
+        var geoObject = context.Geolocation;
 
-// const FindBranchLocationHandler = {
-//     canHandle(handlerInput) {
-//         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-//             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'FindBranchIntent';
-//     },
-//     handle(handlerInput) {
-//         var isGeoSupported = context.System.device.supportedInterfaces.Geolocation;
-//         var geoObject = context.Geolocation;
-
-//         // Geolocation field only exists for mobile devices
-//         if (isGeoSupported) {
-//             // Ask user's permission to allow the skill to use device location
-//             if ( ! geoObject || ! geoObject.coordinate ) {
-//                 return handlerInput.responseBuilder
-//                   .speak('Second National would like to use your location. To turn on location sharing, please go to your Alexa app, and follow the instructions.')
-//                   .withAskForPermissionsConsentCard(['alexa::devices:all:geolocation:read'])
-//                   .getResponse();
-//             } else {
-//                 var ACCURACY_THRESHOLD = 100; // accuracy of 5000 meters required
-//                 if (geoObject && geoObject.coordinate && geoObject.coordinate.accuracyInMeters < ACCURACY_THRESHOLD ) { 
-//                     console.log(geoObject);  // Print the geo-coordinates object if accuracy is within 100 meters
+        // Geolocation field only exists for mobile devices
+        if (isGeoSupported) {
+            // Ask user's permission to allow the skill to use device location
+            if ( ! geoObject || ! geoObject.coordinate ) {
+                return handlerInput.responseBuilder
+                  .speak('Second National would like to use your location. To turn on location sharing, please go to your Alexa app, and follow the instructions.')
+                  .withAskForPermissionsConsentCard(['alexa::devices:all:geolocation:read'])
+                  .getResponse();
+            } else {
+                var ACCURACY_THRESHOLD = 100; // accuracy of 5000 meters required
+                if (geoObject && geoObject.coordinate && geoObject.coordinate.accuracyInMeters < ACCURACY_THRESHOLD ) { 
+                    console.log(geoObject);  // Print the geo-coordinates object if accuracy is within 100 meters
                     
-//                     // const branchLocationMessage = await retrieveAnswer('', 'locations', { lat: geoObject.coordinate.latitudeInDegrees, long: geoObject.coordinate.longitudeInDegrees });
-//                     // return handlerInput.responseBuilder
-//                     //     .speak(branchLocationMessage)
-//                     //     // TODO: add card response
-//                     //     .getResponse();
-//                 }
-//             }
-//         } else {
-//             const deviceLocation = retrieveDeviceCountryAndPostalCode(handlerInput);
+                    const branchLocationMessage = await retrieveAnswer('', 'locations', { lat: geoObject.coordinate.latitudeInDegrees, long: geoObject.coordinate.longitudeInDegrees });
+                    return handlerInput.responseBuilder
+                        .speak(branchLocationMessage)
+                        // TODO: add card response
+                        .getResponse();
+                }
+            }
+        } else {
+            const deviceLocation = retrieveDeviceCountryAndPostalCode(handlerInput);
 
-//             if(deviceLocation.postalCode) {
-//                 // const branchLocationMessage = await retrieveAnswer('', 'locations', { postalCode: deviceLocation.postalCode })
-//                 return handlerInput.responseBuilder
-//                     .speak(branchLocationMessage)
-//                     // TODO: add card response
-//                     .getResponse();
+            if(deviceLocation.postalCode) {
+                const branchLocationMessage = await retrieveAnswer('', 'locations', { postalCode: deviceLocation.postalCode })
+                return handlerInput.responseBuilder
+                    .speak(branchLocationMessage)
+                    // TODO: add card response
+                    .getResponse();
 
-//             } else {
-//                 return handlerInput.responseBuilder
-//                     .speak(deviceLocation.message)
-//                     .withAskForPermissionsConsentCard(deviceLocation.permissions)
-//                     .getResponse();
-//             }
-//         }
-//     }
-// };
+            } else {
+                return handlerInput.responseBuilder
+                    .speak(deviceLocation.message)
+                    .withAskForPermissionsConsentCard(deviceLocation.permissions)
+                    .getResponse();
+            }
+        }
+    }
+};
 
 const HelpIntentHandler = {
     canHandle(handlerInput) {
@@ -190,7 +178,7 @@ const ErrorHandler = {
 exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(
         LaunchRequestHandler,
-        // FindBranchLocationHandler,
+        FindBranchLocationHandler,
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         FallbackIntentHandler,
