@@ -87,4 +87,7 @@ const retrieveDeviceCountryAndPostalCode = async (handlerInput) => {
   }
 }
 
-export { retrieveAnswer, retrieveDeviceCountryAndPostalCode };
+module.exports = {
+  retrieveAnswer,
+  retrieveDeviceCountryAndPostalCode
+}
