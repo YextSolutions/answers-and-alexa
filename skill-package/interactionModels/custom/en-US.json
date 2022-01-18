@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "change me",
+      "invocationName": "Second National",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
