@@ -4,6 +4,7 @@
  * session persistence, api calls, and more.
  * */
 const Alexa = require('ask-sdk-core');
+const { retrieveDeviceCountryAndPostalCode, retrieveAnswer } = require('./retrieveAnswer');
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
@@ -19,18 +20,52 @@ const LaunchRequestHandler = {
     }
 };
 
-const HelloWorldIntentHandler = {
+const FindBranchLocationHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'HelloWorldIntent';
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'FindBranchIntent';
     },
     handle(handlerInput) {
-        const speakOutput = 'Hello World!';
+        var isGeoSupported = context.System.device.supportedInterfaces.Geolocation;
+        var geoObject = context.Geolocation;
 
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
-            //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
-            .getResponse();
+        // Geolocation field only exists for mobile devices
+        if (isGeoSupported) {
+            // Ask user's permission to allow the skill to use device location
+            if ( ! geoObject || ! geoObject.coordinate ) {
+                return handlerInput.responseBuilder
+                  .speak('Second National would like to use your location. To turn on location sharing, please go to your Alexa app, and follow the instructions.')
+                  .withAskForPermissionsConsentCard(['alexa::devices:all:geolocation:read'])
+                  .getResponse();
+            } else {
+                var ACCURACY_THRESHOLD = 100; // accuracy of 5000 meters required
+                if (geoObject && geoObject.coordinate && geoObject.coordinate.accuracyInMeters < ACCURACY_THRESHOLD ) { 
+                    console.log(geoObject);  // Print the geo-coordinates object if accuracy is within 100 meters
+                    
+                    const branchLocationMessage = await retrieveAnswer('', 'locations', { lat: geoObject.coordinate.latitudeInDegrees, long: geoObject.coordinate.longitudeInDegrees })
+                    return handlerInput.responseBuilder
+                        .speak(branchLocationMessage)
+                        // TODO: add card response
+                        .getResponse();
+                }
+            }
+        } else {
+            const deviceLocation = retrieveDeviceCountryAndPostalCode(handlerInput);
+
+            if(deviceLocation.postalCode) {
+                const branchLocationMessage = await retrieveAnswer('', 'locations', { postalCode: deviceLocation.postalCode })
+                return handlerInput.responseBuilder
+                    .speak(branchLocationMessage)
+                    // TODO: add card response
+                    .getResponse();
+
+            } else {
+                return handlerInput.responseBuilder
+                    .speak(deviceLocation.message)
+                    .withAskForPermissionsConsentCard(deviceLocation.permissions)
+                    .getResponse();
+            }
+        }
     }
 };
 
@@ -144,7 +179,7 @@ const ErrorHandler = {
 exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(
         LaunchRequestHandler,
-        HelloWorldIntentHandler,
+        FindBranchLocationHandler,
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         FallbackIntentHandler,
@@ -152,5 +187,6 @@ exports.handler = Alexa.SkillBuilders.custom()
         IntentReflectorHandler)
     .addErrorHandlers(
         ErrorHandler)
+    .withApiClient(new Alexa.DefaultApiClient())
     .withCustomUserAgent('sample/hello-world/v1.2')
     .lambda();
