@@ -20,6 +20,18 @@ const LaunchRequestHandler = {
     }
 };
 
+// {
+//     "name": "FindBranchIntent",
+//     "slots": [],
+//     "samples": [
+//       "where is the closest branch to me",
+//       "im looking for a branch",
+//       "where is the closest location to me",
+//       "find me a branch",
+//       "where is the closest branch"
+//     ]
+//   },
+
 // const FindBranchLocationHandler = {
 //     canHandle(handlerInput) {
 //         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
