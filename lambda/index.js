@@ -16,6 +16,7 @@ const LaunchRequestHandler = {
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt(speakOutput)
+            .withSimpleCard('Welcome to your SDK weather skill. Ask me the weather!', speechText)
             .getResponse();
     }
 };
