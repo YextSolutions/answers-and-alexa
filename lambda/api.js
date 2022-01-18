@@ -75,7 +75,7 @@ const retrieveDeviceCountryAndPostalCode = async (handlerInput) => {
 
     return address;
 
-  } catch (err) {
+  } catch (error) {
     if (error.name !== 'ServiceError') {
       const response = responseBuilder
         .speak('Uh Oh. Looks like something went wrong.')
