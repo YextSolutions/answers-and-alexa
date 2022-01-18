@@ -187,6 +187,6 @@ exports.handler = Alexa.SkillBuilders.custom()
         IntentReflectorHandler)
     .addErrorHandlers(
         ErrorHandler)
-    .withApiClient(new Alexa.DefaultApiClient())
+    // .withApiClient(new Alexa.DefaultApiClient())
     .withCustomUserAgent('sample/hello-world/v1.2')
     .lambda();
