@@ -8,18 +8,16 @@ const { retrieveDeviceCountryAndPostalCode, retrieveAnswer } = require('./api');
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
-        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
+      return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
     },
     handle(handlerInput) {
-        const speakOutput = 'Hello, you can say Hello or Help. Which would you like to try?';
-
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt(speakOutput)
-            .withSimpleCard('Welcome to your SDK weather skill. Ask me the weather!', speechText)
-            .getResponse();
-    }
-};
+      console.log('Inside LaunchRequestHandler');
+      return handlerInput.responseBuilder
+        .speak('Welcome to my ABC skill')
+        .reprompt('Welcome to my ABC skill')
+        .getResponse();
+    },
+  };
 
 // {
 //     "name": "FindBranchIntent",
