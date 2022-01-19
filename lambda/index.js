@@ -51,8 +51,10 @@ const FindBranchLocationHandler = {
             }
         } else {
             const deviceLocation = retrieveDeviceCountryAndPostalCode(handlerInput);
+            console.log('NO GEOLOCATION')
 
             if(deviceLocation.postalCode) {
+                console.log('GOT POSTAL CODE')
                 const branchLocationMessage = await retrieveAnswer('', 'locations', { postalCode: deviceLocation.postalCode })
                 return handlerInput.responseBuilder
                     .speak(branchLocationMessage)
@@ -60,6 +62,7 @@ const FindBranchLocationHandler = {
                     .getResponse();
 
             } else {
+                console.log('ASKING FOR PERMISSION')
                 return handlerInput.responseBuilder
                     .speak(deviceLocation.message)
                     .withAskForPermissionsConsentCard(deviceLocation.permissions)
