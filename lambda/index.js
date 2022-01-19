@@ -4,36 +4,41 @@
  * session persistence, api calls, and more.
  * */
 const Alexa = require('ask-sdk-core');
-const { retrieveDeviceCountryAndPostalCode, retrieveAnswer } = require('api.js');
+const { retrieveDeviceCountryAndPostalCode, retrieveAnswer } = require('./api');
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
+      console.log('Starting Conversation...')
+
       return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
     },
     handle(handlerInput) {
-      console.log('Inside LaunchRequestHandler');
       return handlerInput.responseBuilder
-        .speak('Welcome to my ABC skill')
-        .reprompt('Welcome to my ABC skill')
+        .speak('Welcome to Second National Bank. How can I help you today?')
+        .reprompt('How can I help you today?')
         .getResponse();
     },
   };
 
-  // TODO: needs to be Alexa.context
 const FindBranchLocationHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'FindBranchIntent';
     },
     async handle(handlerInput) {
-        var isGeoSupported = Alexa.context.System.device.supportedInterfaces.Geolocation;
-        var geoObject = Alexa.context.Geolocation;
+        const { requestEnvelope, responseBuilder } = handlerInput;
+
+        console.log('TRYING TO USE SYSTEM')
+        var isGeoSupported = requestEnvelope.context.System.device.supportedInterfaces.Geolocation;
+        console.log('GEOLOCATED')
+        var geoObject = requestEnvelope.context.Geolocation;
+        console.log('FINDBRANCH INTENT')
 
         // Geolocation field only exists for mobile devices
         if (isGeoSupported) {
             // Ask user's permission to allow the skill to use device location
             if ( ! geoObject || ! geoObject.coordinate ) {
-                return handlerInput.responseBuilder
+                return responseBuilder
                   .speak('Second National would like to use your location. To turn on location sharing, please go to your Alexa app, and follow the instructions.')
                   .withAskForPermissionsConsentCard(['alexa::devices:all:geolocation:read'])
                   .getResponse();
@@ -43,7 +48,7 @@ const FindBranchLocationHandler = {
                     console.log(geoObject);  // Print the geo-coordinates object if accuracy is within 100 meters
                     
                     const branchLocationMessage = await retrieveAnswer('', 'locations', { lat: geoObject.coordinate.latitudeInDegrees, long: geoObject.coordinate.longitudeInDegrees });
-                    return handlerInput.responseBuilder
+                    return responseBuilder
                         .speak(branchLocationMessage)
                         // TODO: add card response
                         .getResponse();
@@ -56,14 +61,14 @@ const FindBranchLocationHandler = {
             if(deviceLocation.postalCode) {
                 console.log('GOT POSTAL CODE')
                 const branchLocationMessage = await retrieveAnswer('', 'locations', { postalCode: deviceLocation.postalCode })
-                return handlerInput.responseBuilder
+                return responseBuilder
                     .speak(branchLocationMessage)
                     // TODO: add card response
                     .getResponse();
 
             } else {
                 console.log('ASKING FOR PERMISSION')
-                return handlerInput.responseBuilder
+                return responseBuilder
                     .speak(deviceLocation.message)
                     .withAskForPermissionsConsentCard(deviceLocation.permissions)
                     .getResponse();
