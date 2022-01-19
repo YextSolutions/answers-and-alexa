@@ -14,7 +14,7 @@ const LaunchRequestHandler = {
     },
   };
 
-const FindBranchLocationHandler = {
+const FindBranchHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'FindBranchIntent';
@@ -22,14 +22,14 @@ const FindBranchLocationHandler = {
     async handle(handlerInput) {
         const { requestEnvelope, responseBuilder } = handlerInput;
 
-        var isGeoSupported = requestEnvelope.context.System.device.supportedInterfaces.Geolocation;
-        var geoObject = requestEnvelope.context.Geolocation;
+        const isGeoSupported = requestEnvelope.context.System.device.supportedInterfaces.Geolocation;
+        const geoObject = requestEnvelope.context.Geolocation;
 
         // Geolocation field only exists for mobile devices
         if (isGeoSupported) {
             console.log('Request from mobile device...');
 
-            // Ask user's permission to allow the skill to use device location
+            // Ask user's permission to allow the skill to use device location if it's not already permitted
             if ( ! geoObject || ! geoObject.coordinate ) {
                 console.log('User needs to provide permission')
 
@@ -40,7 +40,7 @@ const FindBranchLocationHandler = {
             } else {
                 console.log('User has provided permission...')
 
-                var ACCURACY_THRESHOLD = 100; // accuracy of 100 meters required
+                const ACCURACY_THRESHOLD = 100; // accuracy of 100 meters required
                 if (geoObject && geoObject.coordinate && geoObject.coordinate.accuracyInMeters < ACCURACY_THRESHOLD ) { 
                     console.log(geoObject);  // Print the geo-coordinates object if accuracy is within 100 meters
                     
@@ -203,7 +203,7 @@ const ErrorHandler = {
 exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(
         LaunchRequestHandler,
-        FindBranchLocationHandler,
+        FindBranchHandler,
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         FallbackIntentHandler,
