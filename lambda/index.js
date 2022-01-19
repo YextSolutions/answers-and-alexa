@@ -1,15 +1,9 @@
-/* *
- * This sample demonstrates handling intents from an Alexa skill using the Alexa Skills Kit SDK (v2).
- * Please visit https://alexa.design/cookbook for additional examples on implementing slots, dialog management,
- * session persistence, api calls, and more.
- * */
 const Alexa = require('ask-sdk-core');
-const { retrieveDeviceCountryAndPostalCode, retrieveAnswer } = require('./api');
+const { retrieveDeviceCountryAndPostalCode, retrieveLocation } = require('./api');
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
       console.log('Starting Conversation...')
-
       return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
     },
     handle(handlerInput) {
@@ -28,49 +22,71 @@ const FindBranchLocationHandler = {
     async handle(handlerInput) {
         const { requestEnvelope, responseBuilder } = handlerInput;
 
-        console.log('TRYING TO USE SYSTEM')
         var isGeoSupported = requestEnvelope.context.System.device.supportedInterfaces.Geolocation;
-        console.log('GEOLOCATED')
         var geoObject = requestEnvelope.context.Geolocation;
-        console.log('FINDBRANCH INTENT')
 
         // Geolocation field only exists for mobile devices
         if (isGeoSupported) {
+            console.log('Request from mobile device...');
+
             // Ask user's permission to allow the skill to use device location
             if ( ! geoObject || ! geoObject.coordinate ) {
+                console.log('User needs to provide permission')
+
                 return responseBuilder
                   .speak('Second National would like to use your location. To turn on location sharing, please go to your Alexa app, and follow the instructions.')
                   .withAskForPermissionsConsentCard(['alexa::devices:all:geolocation:read'])
                   .getResponse();
             } else {
-                var ACCURACY_THRESHOLD = 100; // accuracy of 5000 meters required
+                console.log('User has provided permission...')
+
+                var ACCURACY_THRESHOLD = 100; // accuracy of 100 meters required
                 if (geoObject && geoObject.coordinate && geoObject.coordinate.accuracyInMeters < ACCURACY_THRESHOLD ) { 
                     console.log(geoObject);  // Print the geo-coordinates object if accuracy is within 100 meters
                     
-                    const branchLocationMessage = await retrieveAnswer('', 'locations', { lat: geoObject.coordinate.latitudeInDegrees, long: geoObject.coordinate.longitudeInDegrees });
-                    return responseBuilder
-                        .speak(branchLocationMessage)
-                        // TODO: add card response
+                    // retrieve the closest location using longitude and latitude
+                    const locationResponse = await retrieveLocation({ lat: geoObject.coordinate.latitudeInDegrees, long: geoObject.coordinate.longitudeInDegrees })
+
+                    if(locationResponse.title){
+                        return responseBuilder
+                        .speak(locationResponse.message)
+                        .withSimpleCard(locationResponse.title, locationResponse.message)
                         .getResponse();
+                    } else {
+                        return responseBuilder
+                        .speak(locationResponse.message)
+                        .getResponse();
+                    }
                 }
             }
+        // TODO: Need to test with Stationary Device
         } else {
             const deviceLocation = retrieveDeviceCountryAndPostalCode(handlerInput);
-            console.log('NO GEOLOCATION')
+            console.log('Request from stationary device...')
 
             if(deviceLocation.postalCode) {
                 console.log('GOT POSTAL CODE')
-                const branchLocationMessage = await retrieveAnswer('', 'locations', { postalCode: deviceLocation.postalCode })
-                return responseBuilder
-                    .speak(branchLocationMessage)
-                    // TODO: add card response
-                    .getResponse();
+                const locationResponse = await retrieveLocation({ postalCode: deviceLocation.postalCode })
 
-            } else {
+                if(locationResponse.title){
+                    return responseBuilder
+                    .speak(locationResponse.message)
+                    .withSimpleCard(locationResponse.title, locationResponse.message)
+                    .getResponse();
+                } else {
+                    return responseBuilder
+                    .speak(locationResponse.message)
+                    .getResponse();
+                }
+            } else if(deviceLocation.permissions) {
                 console.log('ASKING FOR PERMISSION')
                 return responseBuilder
                     .speak(deviceLocation.message)
                     .withAskForPermissionsConsentCard(deviceLocation.permissions)
+                    .getResponse();
+            } else {
+                return responseBuilder
+                    .speak(deviceLocation.message)
                     .getResponse();
             }
         }
