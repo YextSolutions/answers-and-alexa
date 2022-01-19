@@ -19,14 +19,15 @@ const LaunchRequestHandler = {
     },
   };
 
+  // TODO: needs to be Alexa.context
 const FindBranchLocationHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'FindBranchIntent';
     },
     handle(handlerInput) {
-        var isGeoSupported = context.System.device.supportedInterfaces.Geolocation;
-        var geoObject = context.Geolocation;
+        var isGeoSupported = Alexa.context.System.device.supportedInterfaces.Geolocation;
+        var geoObject = Alexa.context.Geolocation;
 
         // Geolocation field only exists for mobile devices
         if (isGeoSupported) {
