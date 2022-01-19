@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "bank skill",
+      "invocationName": "second national",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
