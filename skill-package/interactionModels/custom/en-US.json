@@ -35,16 +35,14 @@
             }
           ],
           "samples": [
-            "are {query}",
-            "can {query}",
-            "do {query}",
-            "which {query}",
-            "who {query}",
-            "where {query}",
-            "when {query}",
-            "how {query}",
-            "which {query}",
-            "what {query}"
+            "are {Query}",
+            "can {Query}",
+            "do {Query}",
+            "which {Query}",
+            "who {Query}",
+            "where {Query}",
+            "when {Query}",
+            "how {Query}"
           ]
         },
         {
@@ -55,5 +53,5 @@
       "types": []
     }
   },
-  "version": "4"
+  "version": "17"
 }
