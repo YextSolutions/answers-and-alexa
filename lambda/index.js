@@ -1,6 +1,8 @@
 const Alexa = require('ask-sdk-core');
 const { retrieveDeviceCountryAndPostalCode, retrieveLocation, retrieveFaqAnswer } = require('./api');
 
+const REPROMT_MESSAGE = 'Is there anything else I can help you with today?';
+
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
       console.log('Starting Conversation...')
@@ -36,6 +38,7 @@ const FindBranchHandler = {
                 return responseBuilder
                   .speak('Second National would like to use your location. To turn on location sharing, please go to your Alexa app, and follow the instructions.')
                   .withAskForPermissionsConsentCard(['alexa::devices:all:geolocation:read'])
+                  .reprompt(REPROMT_MESSAGE)
                   .getResponse();
             } else {
                 console.log('User has provided permission...')
@@ -51,10 +54,12 @@ const FindBranchHandler = {
                         return responseBuilder
                             .speak(locationResponse.message)
                             .withSimpleCard(locationResponse.title, locationResponse.message)
+                            .reprompt(REPROMT_MESSAGE)
                             .getResponse();
                     } else {
                         return responseBuilder
                             .speak(locationResponse.message)
+                            .reprompt(REPROMT_MESSAGE)
                             .getResponse();
                     }
                 }
@@ -71,27 +76,31 @@ const FindBranchHandler = {
                     return responseBuilder
                         .speak(locationResponse.message)
                         .withSimpleCard(locationResponse.title, locationResponse.message)
+                        .reprompt(REPROMT_MESSAGE)
                         .getResponse();
                 } else {
                     return responseBuilder
                         .speak(locationResponse.message)
+                        .reprompt(REPROMT_MESSAGE)
                         .getResponse();
                 }
             } else if(deviceLocation.permissions) {
                 return responseBuilder
                     .speak(deviceLocation.message)
                     .withAskForPermissionsConsentCard(deviceLocation.permissions)
+                    .reprompt(REPROMT_MESSAGE)
                     .getResponse();
             } else {
                 return responseBuilder
                     .speak(deviceLocation.message)
+                    .reprompt(REPROMT_MESSAGE)
                     .getResponse();
             }
         }
     }
 };
 
-const QuestionHandler = {
+const QuestionIntentHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'QuestionIntent';
@@ -99,17 +108,19 @@ const QuestionHandler = {
     async handle(handlerInput) {
         const { responseBuilder } = handlerInput;
 
-        const query = Alexa.getSlotValue(handlerInput.requestEnvelope, 'query');
+        const query = Alexa.getSlotValue(handlerInput.requestEnvelope, 'Query');
         const {title, message} = await retrieveFaqAnswer(query);
 
         if(title){
             return responseBuilder
                 .speak(message)
                 .withSimpleCard(title, message)
+                .reprompt(REPROMT_MESSAGE)
                 .getResponse();
         } else {
             return responseBuilder
                 .speak(message)
+                .reprompt(REPROMT_MESSAGE)
                 .getResponse();
         }
     }
@@ -226,7 +237,7 @@ exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(
         LaunchRequestHandler,
         FindBranchHandler,
-        QuestionHandler,
+        QuestionIntentHandler,
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         FallbackIntentHandler,
@@ -234,6 +245,5 @@ exports.handler = Alexa.SkillBuilders.custom()
         IntentReflectorHandler)
     .addErrorHandlers(
         ErrorHandler)
-    // .withApiClient(new Alexa.DefaultApiClient())
     .withCustomUserAgent('sample/hello-world/v1.2')
     .lambda();

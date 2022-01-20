@@ -30,19 +30,21 @@
           "name": "QuestionIntent",
           "slots": [
             {
-              "name": "query",
+              "name": "Query",
               "type": "AMAZON.SearchQuery"
             }
           ],
           "samples": [
             "are {query}",
-            "can i {query}",
             "can {query}",
+            "do {query}",
+            "which {query}",
+            "who {query}",
+            "where {query}",
             "when {query}",
             "how {query}",
             "which {query}",
-            "how do i {query}",
-            "how would i {query}"
+            "what {query}"
           ]
         },
         {
