@@ -1,5 +1,5 @@
 const Alexa = require('ask-sdk-core');
-const { retrieveDeviceCountryAndPostalCode, retrieveLocation } = require('./api');
+const { retrieveDeviceCountryAndPostalCode, retrieveLocation, retrieveFaqAnswer } = require('./api');
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
@@ -49,13 +49,13 @@ const FindBranchHandler = {
 
                     if(locationResponse.title){
                         return responseBuilder
-                        .speak(locationResponse.message)
-                        .withSimpleCard(locationResponse.title, locationResponse.message)
-                        .getResponse();
+                            .speak(locationResponse.message)
+                            .withSimpleCard(locationResponse.title, locationResponse.message)
+                            .getResponse();
                     } else {
                         return responseBuilder
-                        .speak(locationResponse.message)
-                        .getResponse();
+                            .speak(locationResponse.message)
+                            .getResponse();
                     }
                 }
             }
@@ -65,21 +65,19 @@ const FindBranchHandler = {
             console.log('Request from stationary device...')
 
             if(deviceLocation.postalCode) {
-                console.log('GOT POSTAL CODE')
                 const locationResponse = await retrieveLocation({ postalCode: deviceLocation.postalCode })
 
                 if(locationResponse.title){
                     return responseBuilder
-                    .speak(locationResponse.message)
-                    .withSimpleCard(locationResponse.title, locationResponse.message)
-                    .getResponse();
+                        .speak(locationResponse.message)
+                        .withSimpleCard(locationResponse.title, locationResponse.message)
+                        .getResponse();
                 } else {
                     return responseBuilder
-                    .speak(locationResponse.message)
-                    .getResponse();
+                        .speak(locationResponse.message)
+                        .getResponse();
                 }
             } else if(deviceLocation.permissions) {
-                console.log('ASKING FOR PERMISSION')
                 return responseBuilder
                     .speak(deviceLocation.message)
                     .withAskForPermissionsConsentCard(deviceLocation.permissions)
@@ -92,6 +90,30 @@ const FindBranchHandler = {
         }
     }
 };
+
+const QuestionHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'QuestionIntent';
+    },
+    async handle(handlerInput) {
+        const { responseBuilder } = handlerInput;
+
+        const query = Alexa.getSlotValue(handlerInput.requestEnvelope, 'query');
+        const {title, message} = await retrieveFaqAnswer(query);
+
+        if(title){
+            return responseBuilder
+                .speak(message)
+                .withSimpleCard(title, message)
+                .getResponse();
+        } else {
+            return responseBuilder
+                .speak(message)
+                .getResponse();
+        }
+    }
+}
 
 const HelpIntentHandler = {
     canHandle(handlerInput) {
@@ -204,6 +226,7 @@ exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(
         LaunchRequestHandler,
         FindBranchHandler,
+        QuestionHandler,
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         FallbackIntentHandler,
