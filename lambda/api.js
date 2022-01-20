@@ -61,6 +61,7 @@ const retrieveDeviceCountryAndPostalCode = async (handlerInput) => {
     const consentToken = requestEnvelope.context.System.user.permissions
         && requestEnvelope.context.System.user.permissions.consentToken;
     
+    // if no consent token, need to prompt the user to grant device address access
     if (!consentToken) {
       return {
         message: 'Please enable Location permissions in the Amazon Alexa app.',
@@ -68,8 +69,11 @@ const retrieveDeviceCountryAndPostalCode = async (handlerInput) => {
       };
     }
 
+    // deviceId is used to identify the device for the API
     const { deviceId } = requestEnvelope.context.System.device;
     const deviceAddressServiceClient = serviceClientFactory.getDeviceAddressServiceClient();
+    
+    // the device postal code will be enough to find the closest location from the Answers API
     const address = await deviceAddressServiceClient.getCountryAndPostalCode(deviceId);
 
     console.log('Device Location Retrieved.');

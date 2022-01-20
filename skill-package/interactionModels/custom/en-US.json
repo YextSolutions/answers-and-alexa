@@ -27,6 +27,20 @@
           ]
         },
         {
+          "name": "QuestionIntent",
+          "slots": [],
+          "samples": [
+            "are",
+            "can i",
+            "can",
+            "when",
+            "how",
+            "which",
+            "how do i",
+            "how would i"
+          ]
+        },
+        {
           "name": "AMAZON.NavigateHomeIntent",
           "samples": []
         }

@@ -21,7 +21,7 @@ const FindBranchHandler = {
     },
     async handle(handlerInput) {
         const { requestEnvelope, responseBuilder } = handlerInput;
-
+ 
         const isGeoSupported = requestEnvelope.context.System.device.supportedInterfaces.Geolocation;
         const geoObject = requestEnvelope.context.Geolocation;
 
