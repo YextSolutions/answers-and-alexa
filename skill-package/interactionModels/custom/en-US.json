@@ -28,16 +28,21 @@
         },
         {
           "name": "QuestionIntent",
-          "slots": [],
+          "slots": [
+            {
+              "name": "query",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
           "samples": [
-            "are",
-            "can i",
-            "can",
-            "when",
-            "how",
-            "which",
-            "how do i",
-            "how would i"
+            "are {query}",
+            "can i {query}",
+            "can {query}",
+            "when {query}",
+            "how {query}",
+            "which {query}",
+            "how do i {query}",
+            "how would i {query}"
           ]
         },
         {
