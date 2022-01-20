@@ -55,6 +55,34 @@ const retrieveLocation = async (locationData) => {
   }
 }
 
+const retrieveFaqAnswer = async (query) => {
+  try {
+    searchResults = await core.verticalSearch({ query, verticalKey: 'faqs', limit: 1})
+
+    if(searchResults && searchResults.verticalResults.results.length > 0){
+      console.log('FAQ Found');
+      const faqData = searchResults.verticalResults.results[0].rawData;
+      const question = faqData.question;
+      const answer = faqData.answer;
+
+      return {
+        title: question, 
+        message: answer
+      } 
+    } else {
+      console.log('No FAQ Found');
+      return {
+        message: `Sorry, I don't have an answer for that.`
+      }
+    }
+  } catch (err) {
+    console.log(`Answers Error: ${err}`);
+    return {
+      message: 'Uh Oh! It looks like something went wrong. Please try again.'
+    }
+  }
+}
+
 const retrieveDeviceCountryAndPostalCode = async (handlerInput) => {
   try {
     const { requestEnvelope, serviceClientFactory } = handlerInput;
@@ -89,5 +117,6 @@ const retrieveDeviceCountryAndPostalCode = async (handlerInput) => {
 
 module.exports = {
   retrieveLocation,
-  retrieveDeviceCountryAndPostalCode
+  retrieveDeviceCountryAndPostalCode,
+  retrieveFaqAnswer
 }
