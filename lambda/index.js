@@ -67,7 +67,7 @@ const FindBranchHandler = {
         // TODO: Need to test with Stationary Device
         } else {
             const deviceLocation = retrieveDeviceCountryAndPostalCode(handlerInput);
-            console.log('Request from stationary device...')
+            console.log('Request from stationary device....')
 
             if(deviceLocation.postalCode) {
                 const locationResponse = await retrieveLocation({ postalCode: deviceLocation.postalCode })
