@@ -19,11 +19,11 @@
           "name": "FindBranchIntent",
           "slots": [],
           "samples": [
+            "where is the closest branch to me",
             "where is the closest branch",
             "where is the closest location",
             "where is the nearest branch",
-            "where is the nearest location",
-            "closest branch to me"
+            "where is the nearest location"
           ]
         },
         {
@@ -35,6 +35,7 @@
             }
           ],
           "samples": [
+            "what {Query}",
             "are {Query}",
             "can {Query}",
             "do {Query}",
@@ -48,10 +49,19 @@
         {
           "name": "AMAZON.NavigateHomeIntent",
           "samples": []
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": [
+            "no thank you",
+            "no thanks",
+            "nope",
+            "no"
+          ]
         }
       ],
       "types": []
     }
   },
-  "version": "17"
+  "version": "26"
 }
