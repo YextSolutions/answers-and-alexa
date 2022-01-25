@@ -53,7 +53,7 @@ const retrieveLocation = async (locationData) => {
       message: 'Uh Oh! It looks like something went wrong. Please try again.'
     }
   }
-}
+};
 
 const retrieveFaqAnswer = async (query) => {
   try {
@@ -64,24 +64,20 @@ const retrieveFaqAnswer = async (query) => {
       const faqData = searchResults.verticalResults.results[0].rawData;
       const question = faqData.question;
       const answer = faqData.answer;
-
-      return {
-        title: question, 
-        message: answer
-      } 
+      return { question, answer }; 
     } else {
       console.log('No FAQ Found');
       return {
-        message: `Sorry, I don't have an answer for that.`
+        answer: `Sorry, I don't have an answer for that.`
       }
     }
   } catch (err) {
     console.log(`Answers Error: ${err}`);
     return {
-      message: 'Uh Oh! It looks like something went wrong. Please try again.'
+      answer: 'Uh Oh! It looks like something went wrong. Please try again.'
     }
   }
-}
+};
 
 const retrieveDeviceCountryAndPostalCode = async (handlerInput) => {
   try {
@@ -113,7 +109,7 @@ const retrieveDeviceCountryAndPostalCode = async (handlerInput) => {
 
     return { message: 'Uh Oh! It looks like something went wrong. Please try again.' };
   }
-}
+};
 
 module.exports = {
   retrieveLocation,

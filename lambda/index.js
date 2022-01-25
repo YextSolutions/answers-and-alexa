@@ -1,7 +1,7 @@
 const Alexa = require('ask-sdk-core');
 const { retrieveDeviceCountryAndPostalCode, retrieveLocation, retrieveFaqAnswer } = require('./api');
 
-const REPROMT_MESSAGE = 'Is there anything else I can help you with today?';
+const REPROMT_MESSAGE = ' Is there anything else I can help you with today?';
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
@@ -22,6 +22,8 @@ const FindBranchHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'FindBranchIntent';
     },
     async handle(handlerInput) {
+        console.log('------ ENTERING FindBranchHandler -----')
+
         const { requestEnvelope, responseBuilder } = handlerInput;
  
         const isGeoSupported = requestEnvelope.context.System.device.supportedInterfaces.Geolocation;
@@ -106,25 +108,45 @@ const QuestionIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'QuestionIntent';
     },
     async handle(handlerInput) {
-        const { responseBuilder } = handlerInput;
+        console.log('------ ENTERING QuestionHandler -----')
 
-        const query = Alexa.getSlotValue(handlerInput.requestEnvelope, 'Query');
-        const {title, message} = await retrieveFaqAnswer(query);
+        const { responseBuilder, requestEnvelope } = handlerInput;
 
-        if(title){
+        // query is derived from the 'Query' slot value in the QuestionIntent
+        const query = Alexa.getSlotValue(requestEnvelope, 'Query');
+        const { question, answer } = await retrieveFaqAnswer(query);
+
+        if(question){
             return responseBuilder
-                .speak(message)
-                .withSimpleCard(title, message)
+                .speak(answer + REPROMT_MESSAGE)
+                .withSimpleCard(question, answer)
                 .reprompt(REPROMT_MESSAGE)
                 .getResponse();
         } else {
             return responseBuilder
-                .speak(message)
+                .speak(answer + REPROMT_MESSAGE)
                 .reprompt(REPROMT_MESSAGE)
                 .getResponse();
         }
     }
-}
+};
+
+const NoHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && (Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.NoIntent');
+    },
+    handle(handlerInput) {
+        console.log('------ ENTERING NoHandler -----')
+
+        const { responseBuilder } = handlerInput;
+
+        return responseBuilder
+            .speak('If you need anything else, head to our website. Goodbye!')
+            .getResponse();
+
+    }
+};
 
 const HelpIntentHandler = {
     canHandle(handlerInput) {
@@ -239,6 +261,7 @@ exports.handler = Alexa.SkillBuilders.custom()
         FindBranchHandler,
         QuestionIntentHandler,
         HelpIntentHandler,
+        NoHandler,
         CancelAndStopIntentHandler,
         FallbackIntentHandler,
         SessionEndedRequestHandler,
