@@ -16,4 +16,5 @@ NOTE: use ```yext init -u sandbox``` if using a playground/sandbox account.
 
 These commands require the Yext CLI, which you can install with:
 ```bash
-brew i
+brew install yext
+```
