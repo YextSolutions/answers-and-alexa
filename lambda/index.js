@@ -1,5 +1,5 @@
 const Alexa = require('ask-sdk-core');
-const { retrieveDeviceCountryAndPostalCode, retrieveLocation, retrieveFaqAnswer } = require('./api');
+const { retrieveLocation, retrieveFaqAnswer } = require('./api');
 
 const REPROMT_MESSAGE = ' Is there anything else I can help you with today?';
 
@@ -24,7 +24,7 @@ const FindBranchHandler = {
     async handle(handlerInput) {
         console.log('------ ENTERING FindBranchHandler -----')
 
-        const { requestEnvelope, responseBuilder } = handlerInput;
+        const { requestEnvelope, serviceClientFactory, responseBuilder } = handlerInput;
  
         const isGeoSupported = requestEnvelope.context.System.device.supportedInterfaces.Geolocation;
         const geoObject = requestEnvelope.context.Geolocation;
@@ -66,37 +66,62 @@ const FindBranchHandler = {
                     }
                 }
             }
-        // TODO: Need to test with Stationary Device
         } else {
-            const deviceLocation = retrieveDeviceCountryAndPostalCode(handlerInput);
             console.log('Request from stationary device...')
 
-            if(deviceLocation.postalCode) {
-                const locationResponse = await retrieveLocation({ postalCode: deviceLocation.postalCode })
+            const consentToken = requestEnvelope.context.System.user.permissions
+                && requestEnvelope.context.System.user.permissions.consentToken;
 
-                if(locationResponse.title){
+            // Ask user's permission to allow the skill to use device address if it's not already permitted
+            if (!consentToken) {
+                return responseBuilder
+                    .speak('Please enable Location permissions in the Amazon Alexa app.')
+                    .withAskForPermissionsConsentCard(['read::alexa:device:all:address'])
+                    .getResponse();
+            }
+
+            try {
+                const { deviceId } = requestEnvelope.context.System.device;
+                const deviceAddressServiceClient = serviceClientFactory.getDeviceAddressServiceClient();
+
+                // call Alexa Device API to get device address
+                const address = await deviceAddressServiceClient.getFullAddress(deviceId);
+          
+                console.log('Address successfully retrieved, now responding to user.');
+                
+                if (address.addressLine1 === null && address.stateOrRegion === null) {
+                    // Ask user to set device address if they have not already
                     return responseBuilder
-                        .speak(locationResponse.message)
-                        .withSimpleCard(locationResponse.title, locationResponse.message)
-                        .reprompt(REPROMT_MESSAGE)
-                        .getResponse();
+                      .speak(`It looks like you don't have an address set. You can set your address from the companion app.`)
+                      .getResponse();
                 } else {
-                    return responseBuilder
-                        .speak(locationResponse.message)
-                        .reprompt(REPROMT_MESSAGE)
-                        .getResponse();
+                    // retrieve the device address postal code
+                    const locationResponse = await retrieveLocation({ postalCode: address.postalCode })
+
+                    if(locationResponse.title){
+                        return responseBuilder
+                            .speak(locationResponse.message)
+                            .withSimpleCard(locationResponse.title, locationResponse.message)
+                            .reprompt(REPROMT_MESSAGE)
+                            .getResponse();
+                    } else {
+                        return responseBuilder
+                            .speak(locationResponse.message)
+                            .reprompt(REPROMT_MESSAGE)
+                            .getResponse();
+                    }
                 }
-            } else if(deviceLocation.permissions) {
-                return responseBuilder
-                    .speak(deviceLocation.message)
-                    .withAskForPermissionsConsentCard(deviceLocation.permissions)
-                    .reprompt(REPROMT_MESSAGE)
-                    .getResponse();
-            } else {
-                return responseBuilder
-                    .speak(deviceLocation.message)
-                    .reprompt(REPROMT_MESSAGE)
-                    .getResponse();
+
+            } catch(error) {
+                console.log(error)
+                if (error.name !== 'ServiceError') {
+                    const response = responseBuilder
+                        .speak('Uh Oh. Looks like something went wrong.')
+                        .getResponse();
+
+                    return response;
+                }
+                throw error;
             }
         }
     }
@@ -268,5 +293,6 @@ exports.handler = Alexa.SkillBuilders.custom()
         IntentReflectorHandler)
     .addErrorHandlers(
         ErrorHandler)
+    .withApiClient(new Alexa.DefaultApiClient())
     .withCustomUserAgent('sample/hello-world/v1.2')
     .lambda();

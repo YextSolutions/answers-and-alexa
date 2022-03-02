@@ -30,7 +30,7 @@ const retrieveLocation = async (locationData) => {
         limit: 1
       });
     } else if (locationData.postalCode) {    
-      searchResults = await core.verticalSearch({ query: `branches near ${locationData.postalCode}`, verticalKey, limit: 1 });
+      searchResults = await core.verticalSearch({ query: `branches near ${locationData.postalCode}`, verticalKey: 'locations', limit: 1 });
     }
 
     if(searchResults && searchResults.verticalResults.results.length > 0){
@@ -79,40 +79,7 @@ const retrieveFaqAnswer = async (query) => {
   }
 };
 
-const retrieveDeviceCountryAndPostalCode = async (handlerInput) => {
-  try {
-    const { requestEnvelope, serviceClientFactory } = handlerInput;
-    const consentToken = requestEnvelope.context.System.user.permissions
-        && requestEnvelope.context.System.user.permissions.consentToken;
-    
-    // if no consent token, need to prompt the user to grant device address access
-    if (!consentToken) {
-      return {
-        message: 'Please enable Location permissions in the Amazon Alexa app.',
-        permissions: ['alexa::devices:all:geolocation:read']
-      };
-    }
-
-    // deviceId is used to identify the device for the API
-    const { deviceId } = requestEnvelope.context.System.device;
-    const deviceAddressServiceClient = serviceClientFactory.getDeviceAddressServiceClient();
-    
-    // the device postal code will be enough to find the closest location from the Answers API
-    const address = await deviceAddressServiceClient.getCountryAndPostalCode(deviceId);
-
-    console.log('Device Location Retrieved.');
-
-    return address;
-
-  } catch (error) {
-    console.log(error.name);
-
-    return { message: 'Uh Oh! It looks like something went wrong. Please try again.' };
-  }
-};
-
 module.exports = {
   retrieveLocation,
-  retrieveDeviceCountryAndPostalCode,
   retrieveFaqAnswer
 }
