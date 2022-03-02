@@ -1,0 +1,18 @@
+{
+  "$id": "ATM1",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "North Manchester",
+      "countryCode": "US",
+      "line1": "1205 East St.",
+      "postalCode": "46962",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

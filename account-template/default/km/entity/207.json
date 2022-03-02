@@ -1,0 +1,18 @@
+{
+  "$id": "207",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Madison",
+      "countryCode": "US",
+      "line1": "94 E 400 North",
+      "postalCode": "47250",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

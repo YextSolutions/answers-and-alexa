@@ -1,0 +1,18 @@
+{
+  "$id": "3421312",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Fishers",
+      "countryCode": "US",
+      "line1": "11684 Allisonville Road",
+      "postalCode": "46038",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

@@ -1,0 +1,18 @@
+{
+  "$id": "142",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Hagerstown",
+      "countryCode": "US",
+      "line1": "102 W Main St",
+      "postalCode": "47346",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

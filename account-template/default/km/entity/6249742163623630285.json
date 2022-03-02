@@ -1,0 +1,18 @@
+{
+  "$id": "6249742163623630285",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Columbus",
+      "countryCode": "US",
+      "line1": "1865 Parsons Ave.",
+      "postalCode": "43207",
+      "region": "OH"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

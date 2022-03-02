@@ -1,0 +1,12 @@
+{
+  "$id": "FAQ-40008",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "We\u0027ve consolidated all our PPP related information in a central location to make it easier to find what you need including the latest on loan applications and forgiveness.",
+    "name": "I\u0027m looking for more information about PPP.",
+    "question": "I\u0027m looking for more information about PPP."
+  },
+  "entityType": "faq",
+  "labels": []
+}

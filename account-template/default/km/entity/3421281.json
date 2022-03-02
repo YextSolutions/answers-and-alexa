@@ -1,0 +1,18 @@
+{
+  "$id": "3421281",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "West Chester",
+      "countryCode": "US",
+      "line1": "8211 Princeton-Glendale Rd",
+      "postalCode": "45069",
+      "region": "OH"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

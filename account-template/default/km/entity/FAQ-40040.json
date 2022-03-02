@@ -1,0 +1,12 @@
+{
+  "$id": "FAQ-40040",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "We have a calculator to help give you a monthly payment estimate. All you need to do is put in a home’s sale price,  down payment amount, select a loan term and an interest rate, and the calculator will do the rest.",
+    "name": "How do I calculate how much my mortgage will cost every month?",
+    "question": "How do I calculate how much my mortgage will cost every month?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

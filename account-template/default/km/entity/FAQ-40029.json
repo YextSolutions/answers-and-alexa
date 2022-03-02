@@ -1,0 +1,12 @@
+{
+  "$id": "FAQ-40029",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "At minimum, you\u0027ll need to provide personal information, including your Full name, Social Security number, Date of birth, Physical address, and Estimated gross annual income.",
+    "name": "What do I need to apply for a credit card?",
+    "question": "What do I need to apply for a credit card?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

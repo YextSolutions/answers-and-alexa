@@ -1,0 +1,12 @@
+{
+  "$id": "FAQ-40041",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "Not sure how much house you can afford? If you know your income, our calculator will help you figure out what you can afford. You can even test different house prices.",
+    "name": "How much home can I afford?",
+    "question": "How much home can I afford?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

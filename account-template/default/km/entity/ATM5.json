@@ -1,0 +1,18 @@
+{
+  "$id": "ATM5",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Seven Mile",
+      "countryCode": "US",
+      "line1": "200 N. Main Street",
+      "postalCode": "45062",
+      "region": "OH"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

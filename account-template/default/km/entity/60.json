@@ -1,0 +1,18 @@
+{
+  "$id": "60",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Portage",
+      "countryCode": "US",
+      "line1": "5959 US Highway 6",
+      "postalCode": "46368",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Chicago"
+  },
+  "entityType": "location",
+  "labels": []
+}

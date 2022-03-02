@@ -1,7 +1,7 @@
 const { provideCore } = require('@yext/answers-core');
 
 const core = provideCore({
-	apiKey: 'd99f8d1ece40714974c8da1912a1dfdb',
+	apiKey: '5878118846cdd58822bc6f476b917933',
 	experienceKey: 'alexa',
 	locale: 'en',
   sessionTrackingEnabled: true,

@@ -1,0 +1,18 @@
+{
+  "$id": "3421271",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Camden",
+      "countryCode": "US",
+      "line1": "4 South Main Street",
+      "postalCode": "45311",
+      "region": "OH"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

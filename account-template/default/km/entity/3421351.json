@@ -1,0 +1,18 @@
+{
+  "$id": "3421351",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Van Wert",
+      "countryCode": "US",
+      "line1": "113 E Central Ave",
+      "postalCode": "45891",
+      "region": "OH"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

@@ -1,0 +1,18 @@
+{
+  "$id": "3437744",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Indianapolis",
+      "countryCode": "US",
+      "line1": "300 N Meridian Street",
+      "postalCode": "46204",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

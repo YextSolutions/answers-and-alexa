@@ -1,0 +1,18 @@
+{
+  "$id": "202",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Batesville",
+      "countryCode": "US",
+      "line1": "495 E Pearl St.",
+      "postalCode": "47006",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

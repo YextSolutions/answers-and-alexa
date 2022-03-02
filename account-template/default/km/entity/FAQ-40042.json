@@ -1,0 +1,12 @@
+{
+  "$id": "FAQ-40042",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "Not sure if refinancing is right for you? Use our refinancing calculator to figure out how much money you could save. All you need to do is enter your remaining mortgage balance, interest rate and monthly payment amount, and then pick your new loan term and estimate any closing costs.",
+    "name": "Will refinancing save me money?",
+    "question": "Will refinancing save me money?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

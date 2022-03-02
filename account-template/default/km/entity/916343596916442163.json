@@ -1,0 +1,18 @@
+{
+  "$id": "916343596916442163",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "New York",
+      "countryCode": "US",
+      "line1": "235 W 22nd Street",
+      "postalCode": "10011",
+      "region": "NY"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

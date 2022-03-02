@@ -1,0 +1,12 @@
+{
+  "$id": "FAQ-40031",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "When you finance a vehicle, you are buying it from a dealer or individual using a loan supplied by a bank. This gives you ownership over the vehicle and allows you to have control over what you do with it. When you lease a vehicle, you are essentially obtaining temporary ownership limited by the terms of the lease. These terms will include a duration of the lease, as well as maximum mileage allowed per year. You will also be unable to customize the vehicle during the lease.",
+    "name": "What is the difference between leasing and financing a car?",
+    "question": "What is the difference between leasing and financing a car?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

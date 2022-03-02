@@ -1,0 +1,19 @@
+{
+  "$id": "3450413",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Columbus",
+      "countryCode": "US",
+      "line1": "139 S High St",
+      "line2": "Suite 204",
+      "postalCode": "43215",
+      "region": "OH"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

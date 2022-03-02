@@ -1,0 +1,18 @@
+{
+  "$id": "3421315",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Indianapolis",
+      "countryCode": "US",
+      "line1": "8925 Madison Avenue",
+      "postalCode": "46227",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

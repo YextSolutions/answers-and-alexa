@@ -1,0 +1,12 @@
+{
+  "$id": "FAQ-40011",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "Please visit your financial center or contact our Client First Center  for more information.",
+    "name": "What is second national\u0027s policy/procedure for cashing checks?",
+    "question": "What is second national\u0027s policy/procedure for cashing checks?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

@@ -1,0 +1,18 @@
+{
+  "$id": "185",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Goodland",
+      "countryCode": "US",
+      "line1": "220 S. Newton",
+      "postalCode": "47948",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Chicago"
+  },
+  "entityType": "location",
+  "labels": []
+}

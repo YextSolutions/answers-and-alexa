@@ -1,0 +1,12 @@
+{
+  "$id": "FAQ-40007",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "We are here to help. If you are experiencing hardships a result of the Coronavirus, we encourage you to contact our Coronavirus Hotline or by filling out our client hardship assistance form.",
+    "name": "I\u0027m experiencing hardship due to COVID-19. How can you help?",
+    "question": "I\u0027m experiencing hardship due to COVID-19. How can you help?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

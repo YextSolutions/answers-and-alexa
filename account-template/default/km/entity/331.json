@@ -1,0 +1,18 @@
+{
+  "$id": "331",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Fort Recovery",
+      "countryCode": "US",
+      "line1": "220 North Wayne Street",
+      "postalCode": "45846",
+      "region": "OH"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

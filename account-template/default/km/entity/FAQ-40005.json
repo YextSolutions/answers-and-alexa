@@ -1,0 +1,12 @@
+{
+  "$id": "FAQ-40005",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "Second Financial Bank is proud to offer our clients ATMs at our banking centers and at more than 50,000 Allpoint locations nationwide for eligible clients. Find the most convenient ATM for you.",
+    "name": "Where can I find an ATM?",
+    "question": "Where can I find an ATM?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

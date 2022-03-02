@@ -1,0 +1,18 @@
+{
+  "$id": "73",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Marengo",
+      "countryCode": "US",
+      "line1": "165 Indiana 64",
+      "postalCode": "47140",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Marengo"
+  },
+  "entityType": "location",
+  "labels": []
+}

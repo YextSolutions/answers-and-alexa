@@ -1,0 +1,18 @@
+{
+  "$id": "8632359367264141212",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Covington",
+      "countryCode": "US",
+      "line1": "601 Madison Avenue",
+      "postalCode": "41011",
+      "region": "KY"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

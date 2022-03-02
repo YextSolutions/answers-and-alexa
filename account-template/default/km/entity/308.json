@@ -1,0 +1,18 @@
+{
+  "$id": "308",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Cincinnati",
+      "countryCode": "US",
+      "line1": "3442 Edwards Road",
+      "postalCode": "45208",
+      "region": "OH"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

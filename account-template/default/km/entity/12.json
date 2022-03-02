@@ -1,0 +1,18 @@
+{
+  "$id": "12",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Anderson",
+      "countryCode": "US",
+      "line1": "4304 S Scatterfield Rd",
+      "postalCode": "46013",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

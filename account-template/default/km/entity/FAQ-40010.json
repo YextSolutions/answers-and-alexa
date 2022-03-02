@@ -1,0 +1,12 @@
+{
+  "$id": "FAQ-40010",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "Please refer to the Terms \u0026 Conditions of your account agreement for more information.  If you have additional questions, please visit your local Second Financial Bank financial center or contact our Client First Center.",
+    "name": "Does the Bank charge to cash a check?",
+    "question": "Does the Bank charge to cash a check?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

@@ -1,0 +1,18 @@
+{
+  "$id": "ATM18",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Celina",
+      "countryCode": "US",
+      "line1": "115 West Summit Street",
+      "postalCode": "45822",
+      "region": "OH"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

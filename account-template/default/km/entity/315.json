@@ -1,0 +1,18 @@
+{
+  "$id": "315",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Cincinnati",
+      "countryCode": "US",
+      "line1": "11186 Reading Road",
+      "postalCode": "45241",
+      "region": "OH"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

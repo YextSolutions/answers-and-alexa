@@ -1,0 +1,18 @@
+{
+  "$id": "90",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Bourbonnais",
+      "countryCode": "US",
+      "line1": "421 Brown Blvd",
+      "postalCode": "60914",
+      "region": "IL"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Chicago"
+  },
+  "entityType": "location",
+  "labels": []
+}

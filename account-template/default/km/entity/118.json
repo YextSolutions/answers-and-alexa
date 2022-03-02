@@ -1,0 +1,19 @@
+{
+  "$id": "118",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Indianapolis",
+      "countryCode": "US",
+      "line1": "11 South Meridian Street",
+      "line2": "Suite 101",
+      "postalCode": "46204",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

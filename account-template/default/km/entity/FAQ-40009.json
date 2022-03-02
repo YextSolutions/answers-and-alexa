@@ -1,0 +1,12 @@
+{
+  "$id": "FAQ-40009",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "For all information on stimulus checks, visit our stimulus page.",
+    "name": "I\u0027m looking for more information on stimulus checks.",
+    "question": "I\u0027m looking for more information on stimulus checks."
+  },
+  "entityType": "faq",
+  "labels": []
+}

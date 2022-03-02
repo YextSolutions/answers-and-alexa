@@ -1,0 +1,18 @@
+{
+  "$id": "108",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Batesville",
+      "countryCode": "US",
+      "line1": "114 State Road 46 E",
+      "postalCode": "47006",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

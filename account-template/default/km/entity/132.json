@@ -1,0 +1,18 @@
+{
+  "$id": "132",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Rushville",
+      "countryCode": "US",
+      "line1": "202 N Main St",
+      "postalCode": "46173",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

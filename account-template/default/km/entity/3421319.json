@@ -1,0 +1,18 @@
+{
+  "$id": "3421319",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Zionsville",
+      "countryCode": "US",
+      "line1": "50 N Ford Road",
+      "postalCode": "46077",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

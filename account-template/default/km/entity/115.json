@@ -1,0 +1,19 @@
+{
+  "$id": "115",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Indianapolis",
+      "countryCode": "US",
+      "line1": "3535 E. 96th Street",
+      "line2": "Suite 135",
+      "postalCode": "46240",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

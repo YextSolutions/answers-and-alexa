@@ -1,0 +1,18 @@
+{
+  "$id": "91",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Grant Park",
+      "countryCode": "US",
+      "line1": "101 N Hilgert Dr",
+      "postalCode": "60940",
+      "region": "IL"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Chicago"
+  },
+  "entityType": "location",
+  "labels": []
+}

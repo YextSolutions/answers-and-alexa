@@ -1,0 +1,18 @@
+{
+  "$id": "171",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Williamsport",
+      "countryCode": "US",
+      "line1": "120 N Monroe St",
+      "postalCode": "47993",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

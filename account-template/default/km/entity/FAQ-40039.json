@@ -1,0 +1,12 @@
+{
+  "$id": "FAQ-40039",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "Yes, we have calculators to help you estimate your monthly mortgage payment, how much house you can afford, and how much refinancing could save you.",
+    "name": "Does Second Financial Bank have any mortgage calculators?",
+    "question": "Does Second Financial Bank have any mortgage calculators?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

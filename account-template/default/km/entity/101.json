@@ -1,0 +1,18 @@
+{
+  "$id": "101",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Lawrenceburg",
+      "countryCode": "US",
+      "line1": "41 West Eads Parkway",
+      "postalCode": "47025",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

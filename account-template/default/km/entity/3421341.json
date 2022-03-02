@@ -1,0 +1,18 @@
+{
+  "$id": "3421341",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Dayton",
+      "countryCode": "US",
+      "line1": "2331 Far Hills Avenue",
+      "postalCode": "45419",
+      "region": "OH"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

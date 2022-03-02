@@ -1,0 +1,18 @@
+{
+  "$id": "208",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Hanover",
+      "countryCode": "US",
+      "line1": "484 Ball Drive",
+      "postalCode": "47243",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

@@ -1,0 +1,12 @@
+{
+  "$id": "FAQ-40013",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "We do not currently offer Zelle. We invite you to use our person to person payment solution which is available through bill payment within online banking and our mobile app. Make sure to check back often as we are always looking for ways to improve our online tools.",
+    "name": "Does Second National Offer Zelle®?",
+    "question": "Does Second National Offer Zelle®?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

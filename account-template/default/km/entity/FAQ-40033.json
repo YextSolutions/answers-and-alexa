@@ -1,0 +1,12 @@
+{
+  "$id": "FAQ-40033",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "You can easily manage your credit card account online. You\u0027ll be able to see account and reward balances, pay your bill, report a lost or stolen card, and redeem rewards.",
+    "name": "How do I login to check my personal credit card balance, view transaction activity, or make a payment?",
+    "question": "How do I login to check my personal credit card balance, view transaction activity, or make a payment?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

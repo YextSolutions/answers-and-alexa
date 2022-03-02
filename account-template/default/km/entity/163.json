@@ -1,0 +1,18 @@
+{
+  "$id": "163",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Hobart",
+      "countryCode": "US",
+      "line1": "555 East 3rd Street",
+      "postalCode": "46342",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Chicago"
+  },
+  "entityType": "location",
+  "labels": []
+}

@@ -1,0 +1,18 @@
+{
+  "$id": "566",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Centerville",
+      "countryCode": "US",
+      "line1": "5361 Cornerstone N Blvd",
+      "postalCode": "45440",
+      "region": "OH"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

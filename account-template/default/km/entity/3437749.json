@@ -1,0 +1,18 @@
+{
+  "$id": "3437749",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Westerville",
+      "countryCode": "US",
+      "line1": "780 S State Street",
+      "postalCode": "43081",
+      "region": "OH"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

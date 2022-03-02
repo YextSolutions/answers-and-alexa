@@ -1,0 +1,19 @@
+{
+  "$id": "14",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Bloomington",
+      "countryCode": "US",
+      "line1": "101 W. Kirkwood Avenue",
+      "line2": "Suite 116",
+      "postalCode": "47404",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

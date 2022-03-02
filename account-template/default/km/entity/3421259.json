@@ -1,0 +1,18 @@
+{
+  "$id": "3421259",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Monroe",
+      "countryCode": "US",
+      "line1": "108 South Main Street",
+      "postalCode": "45050",
+      "region": "OH"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

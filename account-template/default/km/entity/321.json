@@ -1,0 +1,18 @@
+{
+  "$id": "321",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Louisville",
+      "countryCode": "US",
+      "line1": "2862 Frankfort Ave",
+      "postalCode": "40206",
+      "region": "KY"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

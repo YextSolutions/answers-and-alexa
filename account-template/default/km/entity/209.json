@@ -1,0 +1,18 @@
+{
+  "$id": "209",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Fountain City",
+      "countryCode": "US",
+      "line1": "203 US Highway 27 North",
+      "postalCode": "47341",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

@@ -1,0 +1,12 @@
+{
+  "$id": "FAQ-40003",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "The Bank will typically process transactions in the following order, which may not be the order in which you initiated the transactions. Please refer to your Account Terms and Conditions for more details.",
+    "name": "In what order does the Bank process my transactions?",
+    "question": "In what order does the Bank process my transactions?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

@@ -1,0 +1,18 @@
+{
+  "$id": "3437747",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Upper Arlington",
+      "countryCode": "US",
+      "line1": "3005 Northwest Blvd",
+      "postalCode": "43221",
+      "region": "OH"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

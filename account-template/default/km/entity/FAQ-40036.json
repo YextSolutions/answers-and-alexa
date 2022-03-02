@@ -1,0 +1,12 @@
+{
+  "$id": "FAQ-40036",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "You’ll need the following information about your recipient to send a wire: Name,  Account number, Routing number,  Bank name,  and Bank city and state",
+    "name": "What information do I need to send a wire?",
+    "question": "What information do I need to send a wire?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

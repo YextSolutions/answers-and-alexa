@@ -1,0 +1,18 @@
+{
+  "$id": "149",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "North Vernon",
+      "countryCode": "US",
+      "line1": "521 N. State Street",
+      "postalCode": "47265",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

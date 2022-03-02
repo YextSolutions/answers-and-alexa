@@ -1,0 +1,18 @@
+{
+  "$id": "ATM12",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Hamilton",
+      "countryCode": "US",
+      "line1": "5971 Golf Club Lane",
+      "postalCode": "45011",
+      "region": "OH"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

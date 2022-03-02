@@ -1,0 +1,18 @@
+{
+  "$id": "214",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Whiteland",
+      "countryCode": "US",
+      "line1": "989 U.S. 31",
+      "postalCode": "46184",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

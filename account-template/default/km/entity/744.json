@@ -1,0 +1,18 @@
+{
+  "$id": "744",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Schererville",
+      "countryCode": "US",
+      "line1": "450 W Lincoln Highway",
+      "postalCode": "46375",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Chicago"
+  },
+  "entityType": "location",
+  "labels": []
+}

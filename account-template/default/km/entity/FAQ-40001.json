@@ -1,0 +1,12 @@
+{
+  "$id": "FAQ-40001",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "An overdraft occurs when the bank pays for a transaction or payment that causes your account to have a negative balance. You will be charged a $37 fee for each transaction we pay on your behalf or for each transaction we return as unpaid. For more questions on overdrafts, visit our overdraft page.",
+    "name": "What is an overdraft?",
+    "question": "What is an overdraft?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

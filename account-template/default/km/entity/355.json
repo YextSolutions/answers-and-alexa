@@ -1,0 +1,18 @@
+{
+  "$id": "355",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Huber Heights",
+      "countryCode": "US",
+      "line1": "6325 Brandt Pike",
+      "postalCode": "45424",
+      "region": "OH"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

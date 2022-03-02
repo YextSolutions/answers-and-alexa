@@ -1,0 +1,18 @@
+{
+  "$id": "3421273",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Oxford",
+      "countryCode": "US",
+      "line1": "411 South Locust St",
+      "postalCode": "45056",
+      "region": "OH"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

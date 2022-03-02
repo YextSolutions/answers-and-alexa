@@ -1,0 +1,18 @@
+{
+  "$id": "184",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Watseka",
+      "countryCode": "US",
+      "line1": "216 S 4th St",
+      "postalCode": "60970",
+      "region": "IL"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Chicago"
+  },
+  "entityType": "location",
+  "labels": []
+}

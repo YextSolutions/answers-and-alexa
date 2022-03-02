@@ -1,0 +1,18 @@
+{
+  "$id": "179",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Brownstown",
+      "countryCode": "US",
+      "line1": "1051 W Spring Street",
+      "postalCode": "47220",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

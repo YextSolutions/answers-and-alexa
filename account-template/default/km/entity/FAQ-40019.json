@@ -1,0 +1,12 @@
+{
+  "$id": "FAQ-40019",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "You can absolutely start looking for a house before you’ve pre-qualified for a mortgage. However, there are multiple reasons to get pre-qualified before you start shopping. Pre-qualifying for a home lets you know roughly how much you can afford to spend. It also helps sellers know that you’re serious when you want to make an offer. If you’re shopping in a competitive market, being pre-qualified can give you an edge in negotiations, and help move the process along more quickly.",
+    "name": "Should I pre-qualify for a mortage before I start looking for a house?",
+    "question": "Should I pre-qualify for a mortage before I start looking for a house?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

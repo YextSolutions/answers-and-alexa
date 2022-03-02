@@ -1,0 +1,18 @@
+{
+  "$id": "182",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Troy",
+      "countryCode": "US",
+      "line1": "1580 W. Main Street",
+      "postalCode": "45373",
+      "region": "OH"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

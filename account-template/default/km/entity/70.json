@@ -1,0 +1,18 @@
+{
+  "$id": "70",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Crawfordsville",
+      "countryCode": "US",
+      "line1": "1688 Crawfordsville Square Dr",
+      "postalCode": "47933",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

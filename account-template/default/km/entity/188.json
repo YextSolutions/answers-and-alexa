@@ -1,0 +1,18 @@
+{
+  "$id": "188",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Hoopeston",
+      "countryCode": "US",
+      "line1": "323 E Main St",
+      "postalCode": "60942",
+      "region": "IL"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Chicago"
+  },
+  "entityType": "location",
+  "labels": []
+}

@@ -1,0 +1,18 @@
+{
+  "$id": "497284317941386196",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Cincinnati",
+      "countryCode": "US",
+      "line1": "6001 Hamilton Avenue",
+      "postalCode": "45224",
+      "region": "OH"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

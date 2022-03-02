@@ -1,0 +1,18 @@
+{
+  "$id": "513",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Fairfield",
+      "countryCode": "US",
+      "line1": "6060 South Gilmore Ave",
+      "postalCode": "45014",
+      "region": "OH"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

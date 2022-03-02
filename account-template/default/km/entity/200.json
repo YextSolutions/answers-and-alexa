@@ -1,0 +1,18 @@
+{
+  "$id": "200",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Greensburg",
+      "countryCode": "US",
+      "line1": "2105 State Road 3",
+      "postalCode": "47240",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

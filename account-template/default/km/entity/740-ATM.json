@@ -1,0 +1,18 @@
+{
+  "$id": "740-ATM",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Gary",
+      "countryCode": "US",
+      "line1": "5974 West Ridge Road",
+      "postalCode": "46408",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Chicago"
+  },
+  "entityType": "location",
+  "labels": []
+}

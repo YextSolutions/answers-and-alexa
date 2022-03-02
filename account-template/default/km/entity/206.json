@@ -1,0 +1,18 @@
+{
+  "$id": "206",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Leavenworth",
+      "countryCode": "US",
+      "line1": "1 Opportunity Dr\u0026 St Rd 66",
+      "postalCode": "47137",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Marengo"
+  },
+  "entityType": "location",
+  "labels": []
+}

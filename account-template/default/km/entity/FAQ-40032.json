@@ -1,0 +1,12 @@
+{
+  "$id": "FAQ-40032",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "Home equity refers to the difference between what you owe on a mortgage and what your home is currently worth. To determine the amount of equity you have, subtract the balance of your mortgage from the current value of your home.",
+    "name": "What is home equity? How do I know if I have it?",
+    "question": "What is home equity? How do I know if I have it?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

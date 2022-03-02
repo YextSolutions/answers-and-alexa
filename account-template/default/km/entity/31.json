@@ -1,0 +1,18 @@
+{
+  "$id": "31",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Centerville",
+      "countryCode": "US",
+      "line1": "101 E Main St",
+      "postalCode": "47330",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

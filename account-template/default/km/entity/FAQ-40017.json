@@ -1,0 +1,12 @@
+{
+  "$id": "FAQ-40017",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "We offer check deposit, withdrawals, cash deposits and more. To learn more about the services we offer visit our how-to page.",
+    "name": "What services can I use through an ATM or ITM machine?",
+    "question": "What services can I use through an ATM or ITM machine?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

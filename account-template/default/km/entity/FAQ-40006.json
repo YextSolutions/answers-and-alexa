@@ -1,0 +1,12 @@
+{
+  "$id": "FAQ-40006",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "answer": "You can find the most up-to-date job postings on our careers page.",
+    "name": "What careers are available?",
+    "question": "What careers are available?"
+  },
+  "entityType": "faq",
+  "labels": []
+}

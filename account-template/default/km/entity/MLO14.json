@@ -1,0 +1,18 @@
+{
+  "$id": "MLO14",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Bexley",
+      "countryCode": "US",
+      "line1": "2680 E Main St",
+      "postalCode": "43209",
+      "region": "OH"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

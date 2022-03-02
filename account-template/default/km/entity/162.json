@@ -1,0 +1,18 @@
+{
+  "$id": "162",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Indianapolis",
+      "countryCode": "US",
+      "line1": "1180 W 86th Street",
+      "postalCode": "46260",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

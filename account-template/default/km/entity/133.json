@@ -1,0 +1,18 @@
+{
+  "$id": "133",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Columbus",
+      "countryCode": "US",
+      "line1": "707 Creekview Dr",
+      "postalCode": "47201",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

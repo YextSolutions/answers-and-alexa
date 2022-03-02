@@ -1,0 +1,18 @@
+{
+  "$id": "323",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Louisville",
+      "countryCode": "US",
+      "line1": "9306 Taylorsville Road",
+      "postalCode": "40299",
+      "region": "KY"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}

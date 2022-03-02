@@ -1,0 +1,18 @@
+{
+  "$id": "146",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Greenwood",
+      "countryCode": "US",
+      "line1": "1263 N State Road 135",
+      "postalCode": "46142",
+      "region": "IN"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "entityType": "location",
+  "labels": []
+}

@@ -1,0 +1,18 @@
+{
+  "$id": "314",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "address": {
+      "city": "Delphos",
+      "countryCode": "US",
+      "line1": "202 North Main Street",
+      "postalCode": "45833",
+      "region": "OH"
+    },
+    "name": "Second National Bank",
+    "timezone": "America/New_York"
+  },
+  "entityType": "location",
+  "labels": []
+}
